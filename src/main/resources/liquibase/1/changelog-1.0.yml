@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create users table
+      author: Ravan Hasanzada
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    remarks: id of user
+              - column:
+                  name: email
+                  type: varchar(64)
+                  remarks: email of user
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(64)
+                  remarks: firstName of user
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+                  remarks: lastName of user
+              - column:
+                  name: middle_name
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+                  remarks: middleName of user
+              - column:
+                  name: post_code
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+                  remarks: postCode of user
+              - column:
+                  name: is_active
+                  type: boolean
+                  remarks: check user is active or not
+
+            remarks: Table to store information about users
